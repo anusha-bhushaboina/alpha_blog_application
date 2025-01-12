@@ -22,7 +22,7 @@ jobs:
         run: chmod +x bin/brakeman
 
       - name: Scan for common Rails security vulnerabilities using static analysis
-        run: bin/brakeman --no-pager
+        run: bundle exec brakeman --no-pager
 
   scan_js:
     runs-on: ubuntu-latest
@@ -53,7 +53,12 @@ jobs:
           bundler-cache: true
 
       - name: Lint code for consistent style
-        run: bin/rubocop -f github
+        run: bundle exec rubocop -f github
+      - name: Install JavaScript dependencies
+        run: yarn install  # or npm install
+
+      - name: Lint JavaScript files
+        run: yarn eslint . --ext .js
 
   test:
     runs-on: ubuntu-latest
