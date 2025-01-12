@@ -58,7 +58,7 @@ jobs:
         run: yarn install  # or npm install
 
       - name: Lint JavaScript files
-        run: yarn eslint . --ext .js
+        run: yarn eslint .
 
   test:
     runs-on: ubuntu-latest
