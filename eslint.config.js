@@ -1,7 +1,7 @@
 export default [
   {
     files: ['**/*.js'],
-    ignores: ['vendor/**'], // Exclude the vendor directory
+    ignores: ['node_modules/**', 'vendor/**', 'dist/**'], // Exclude the vendor directory
     languageOptions: {
       parserOptions: {
         ecmaVersion: 'latest',
