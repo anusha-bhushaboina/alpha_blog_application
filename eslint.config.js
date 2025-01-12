@@ -1,22 +1,17 @@
-// eslint.config.js
 export default [
   {
+    files: ['**/*.js'],
+    ignores: ['vendor/**'], // Exclude the vendor directory
     languageOptions: {
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
       },
-      globals: {
-        // Define global variables here
-        browser: true,
-        node: true,
-      },
     },
     rules: {
+      indent: ['error', 2],
       'no-console': 'warn',
-      'indent': ['error', 2],
-      // Add more rules as needed
+      // Add more rules here
     },
   },
 ];
-  
