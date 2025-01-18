@@ -1,4 +1,17 @@
 <h1>Create a New Article</h1>
+<% if alert %>
+  <div class="alert alert-danger">
+    <% if alert.is_a?(Array) %>
+      <ul>
+        <% alert.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <%= alert %>
+    <% end %>
+  </div>
+<% end %>
 <%= form_with scope: :article, url: articles_path, local: true do |f| %>
     <p>
     <%= f.label :title %><br/>
